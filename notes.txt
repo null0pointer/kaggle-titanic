@@ -1,0 +1,6 @@
+1. Price could be for group bookings
+2. Multiple cabins per booking
+3. New parameter of <booking price> / <number of cabins> / <cabin class> => proxy for <people per cabin>
+4. Look at deck plan to get meaning for the cabin numbers
+5. Group by ticket and split the fare across them to fill empty values
+	- There aren't that many missing fares, more missing cabins
