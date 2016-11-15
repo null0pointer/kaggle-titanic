@@ -1,10 +1,29 @@
 import pandas as pd
 
 # Read datasets
-print('Reading training dataset...')
+print('Reading datasets...')
 train_dataset = pd.read_csv('train.csv', header=0, index_col=0)
-print('Reading prediction dataset...')
 prediction_dataset = pd.read_csv('test.csv', header=0, index_col=0)
+combined_dataset = train_dataset.append(prediction_dataset)
+
+# Create deck column
+print('Creating new columns...')
+deck_set = {'None'}
+ticket_deck_map = {}
+
+# Creating the deck values
+for index, row in combined_dataset.iterrows():
+    cabin_string = str(row['Cabin'])
+    if not cabin_string == 'nan':
+        deck_string = cabin_string[0]
+        deck_set.add(deck_string)
+        ticket_deck_map[row['Ticket']] = deck_string
+
+# Populate the 
+
+# Add deck column
+print('Add new columns...')
+
 
 # Remove unused columns
 print('Removing name...')
